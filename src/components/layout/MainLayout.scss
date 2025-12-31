@@ -1,0 +1,119 @@
+
+
+
+// MainLayout.scss
+.main-layout {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    z-index: 2;
+
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .page-content {
+    display: flex;
+  
+    padding: 0 60px;
+    gap: 30px;
+    height: 100%; 
+    
+
+    position: relative; 
+  }
+
+
+  // .mobile-overlay {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(0, 0, 0, 0.5);
+  //   z-index: 40;
+  //   backdrop-filter: blur(2px);
+  // }
+}
+
+// WIDGET LAYOUT STYLES
+.widgets {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding-bottom: 40px; 
+  .widget_row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+    
+    @media (min-width: 1025px) {
+      .widget {
+        // First row ratios
+        &:nth-child(1) { flex: 1; } // ExpiryChart
+        &:nth-child(2) { flex: 2; } // Table
+      }
+      
+      // Target (Row 2)
+      &:has(.stats-grid-container) {
+         .widget { flex: 1; } // Table
+         .stats-grid-container { flex: 1; } // Grid
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .widgets {
+    .widget_row {
+      flex-direction: column; 
+      height: auto;
+      
+      .widget, .stats-grid-container {
+        width: 100% !important;
+        flex: none !important;
+      }
+    }
+  }
+}
+
+// Mobile (Max 768px)
+@media (max-width: 768px) {
+  .main-layout {
+    .content-wrapper {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+    }
+    
+    .page-content {
+  
+      padding: 20px 10px; 
+      gap: 15px;
+      flex-direction: column; 
+    }
+  }
+
+  .widgets {
+     gap: 15px;
+  }
+}

@@ -1,0 +1,109 @@
+/* AnimatedBlobs.scss */
+
+.blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind everything */
+  overflow: hidden;
+  // background: #f8f9fa;
+}
+
+/* Common styles for the wrapper that moves around the screen */
+.blob-wrapper {
+  position: absolute; 
+  width: 500px;
+  height: 500px;
+  opacity: 0.6; 
+  filter: blur(80px); /* The "soft blob" effect */
+}
+
+/* Common styles for the inner morphing shape */
+.blob {
+  width: 100%;
+  height: 100%;
+  animation: blobMorph 10s ease-in-out infinite alternate,
+             blobSpin 25s linear infinite;
+}
+
+/* --- BLOB 1 (Red/Pink) --- */
+.blob-1 {
+  animation: moveAround1 45s ease-in-out infinite alternate;
+}
+.blob-1 .blob {
+  background: radial-gradient(circle at 30% 30%, #ff7eb3, #ff758c);
+}
+
+/* --- BLOB 2 (Purple/Blue) --- */
+.blob-2 {
+  animation: moveAround2 50s ease-in-out infinite alternate;
+}
+.blob-2 .blob {
+  background: radial-gradient(circle at 70% 70%, #a8c0ff, #3f2b96);
+}
+
+/* --- BLOB 3 (Teal/Green) --- */
+.blob-3 {
+  animation: moveAround3 55s ease-in-out infinite alternate;
+}
+.blob-3 .blob {
+  background: radial-gradient(circle at 20% 80%, #42e695, #3bb2b8);
+}
+
+/* --- BLOB 4 (Yellow/Orange) --- */
+.blob-4 {
+  animation: moveAround4 60s ease-in-out infinite alternate;
+}
+.blob-4 .blob {
+  background: radial-gradient(circle at 80% 20%, #f6d365, #fda085);
+}
+
+
+/* --- ANIMATIONS --- */
+
+@keyframes blobMorph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  33% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  66% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+@keyframes blobSpin {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1.1); }
+}
+
+/* Four unique paths to prevent them from bunching up */
+@keyframes moveAround1 {
+  0% { top: 10%; left: 10%; }
+  25% { top: 50%; left: 70%; }
+  50% { top: 80%; left: 20%; }
+  75% { top: 20%; left: 80%; }
+  100% { top: 10%; left: 10%; }
+}
+
+@keyframes moveAround2 {
+  0% { top: 80%; left: 80%; }
+  25% { top: 20%; left: 60%; }
+  50% { top: 10%; left: 10%; }
+  75% { top: 70%; left: 20%; }
+  100% { top: 80%; left: 80%; }
+}
+
+@keyframes moveAround3 {
+  0% { top: 10%; left: 80%; }
+  25% { top: 80%; left: 60%; }
+  50% { top: 30%; left: 10%; }
+  75% { top: 60%; left: 90%; }
+  100% { top: 10%; left: 80%; }
+}
+
+@keyframes moveAround4 {
+  0% { top: 70%; left: 10%; }
+  25% { top: 10%; left: 40%; }
+  50% { top: 60%; left: 80%; }
+  75% { top: 30%; left: 20%; }
+  100% { top: 70%; left: 10%; }
+}

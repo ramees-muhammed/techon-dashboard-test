@@ -1,0 +1,43 @@
+
+:root {
+  --blob-red: rgba(255, 0, 0, 0.12);
+  --blob-green: rgba(58, 255, 37, 0.11);
+  --blob-yellow: rgba(252, 213, 63, 0.35);
+
+  --blob-size: 520px;
+  --blob-blur: 120px;
+
+  --color-primary: #4B66E3;   
+  --color-header-dark-blue: #02024B;  
+  --color-secondary: #ADC6FF;   
+  --color-accent-purple: #4B66E3; 
+  
+  /* --- Chart & Status Colors --- */
+  --color-success: #52C41A;      
+  --color-warning: #FAAD14;
+  --color-error: #F5222D;
+  --color-chart-bar: #E6F7FF;   
+  
+  /* --- Text Colors --- */
+  --text-dark: #000000;          
+  --text-white: #FFFFFF;     
+  --text-disabled: #BFBFBF;
+  
+  /* --- Glassmorphism Tokens (The "Frost" Effect) --- */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --glass-blur: 12px;
+  
+  /* --- Dashboard Background --- */
+  --white-bg :#FFFFFF;
+  --chart-bar-bg: #E9EDF7;
+  --app-bg-gradient: #D2D2D2;
+}
+
+
+/* --- Typography --- */
+$font-family-primary: "Poppins", sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;

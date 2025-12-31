@@ -1,0 +1,239 @@
+
+$color-primary-dark: #0b1f44;
+$color-neon-lime: #D2F561; 
+$header-height: 80px;
+
+header.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: $header-height;
+  min-height: $header-height;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent; 
+
+  /* Left Section */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .logo-container {
+      img.brand-logo {
+        height: 32px;
+        // width: auto;
+        object-fit: contain;
+
+        @media (max-width:768px) {
+          height: 24px;
+        }
+      }
+    }
+
+    .page-title {
+      font-size: 24px;
+      color: $color-primary-dark;
+      font-weight: 700;
+      line-height: 100%;
+    }
+  }
+
+  /* Right Section */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+              @media (max-width:768px) {
+      gap: 12px;
+        }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+
+      img {
+        width: 40px; 
+   
+    
+
+             @media (max-width:768px) {
+          width:  32px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.more-options {
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: $color-primary-dark;
+        font-weight: bold;
+      }
+    }
+
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+
+      .avatar {
+            width: 40px; 
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.2;
+
+        .name {
+          font-size: 16px;
+          font-weight: 600;
+          color: $color-primary-dark;
+        }
+
+        .role {
+          font-size: 12px;
+          font-weight: 500;
+          color: #666;
+        }
+      }
+    }
+
+    /* Hamburger Button  */
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 18px; 
+      padding: 0;
+      
+      // The 3 bars
+      span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $color-neon-lime;
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
+      }
+
+    
+      &.open {
+        span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+      }
+    }
+
+    /* Mobile Menu Container */
+    .mobile-menu {
+      position: absolute;
+      top: 70px;
+      right: 0px;
+      width: 100%;
+   background: #FFFFFF66;
+border: 1px solid #FFFFFF1A;
+backdrop-filter: blur(28.200000762939453px);
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      padding: 15px 0;
+      z-index: 999;
+      animation: slideDown 0.25s ease;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: $color-primary-dark;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background: #f2f5ff;
+        }
+
+        .icon {
+          width: 26px;
+          height: 26px;
+          background: #D2F561;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+  header.dashboard-header {
+    padding: 0 20px; 
+
+    .header-left .page-title {
+      display: none; 
+    }
+
+    .header-right {
+   
+      .user-profile,
+      .more-options {
+        display: none; 
+      }
+
+      // Shows Hamburger
+      .hamburger-btn {
+        display: flex; 
+      }
+      
+   
+      .message-btn {
+        display: flex;
+      }
+    }
+  }
+}
