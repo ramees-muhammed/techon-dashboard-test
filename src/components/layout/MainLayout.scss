@@ -36,7 +36,7 @@
     
 
     position: relative; 
-    @min-width(1440px) {
+    @media min-width(1440px) {
       align-items: center;  
     }
   }
