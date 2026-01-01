@@ -3,7 +3,8 @@ $active-lime: #D2F561;
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  justify-content: space-around;
+  gap: 40px;
   align-items: center;
   background: transparent;
   width: 60px; 
@@ -28,6 +29,9 @@ $active-lime: #D2F561;
       flex-direction: column;
       align-items: center;
       gap: 15px; 
+      @media (min-width: 1440px) {
+gap:30px;
+  }
     }
 
     li {
