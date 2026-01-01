@@ -18,19 +18,27 @@ React 18 , TypeScript, Vite, SCSS (Sass), Recharts, framer motion
 src/
 ├── components/
 │   ├── MainLayout/
+    └── MainLayout.scss
 │   ├── Header/
 │   ├── Sidebar/
 │   └── Widget/
+│
 ├── components/ui/
 │   ├── StatsCard.tsx
 │   ├── ExpiryChart.tsx
 │   ├── DocumentsTable.tsx
 │   └── AnimatedBlobs.tsx
+│   └── Ui.scss
 ├── data/
 │   └── chartData.ts
+│
 ├── styles/
-│   └── Ui.scss
+│   └── variables.scss
+│   └── style.scss
+│   └── index.scss
+├── App.tsx
 └── main.tsx
+
 
 
 ## React Compiler
